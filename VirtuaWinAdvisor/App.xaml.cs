@@ -1,10 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Diagnostics;
+using System.IO;
+using System.ServiceModel;
+using System.ServiceModel.Description;
+using System.Threading;
 using System.Windows;
+using VirtuaWinAdvisor.IPC;
+using VirtuaWinAdvisor.Service;
 
 namespace VirtuaWinAdvisor
 {
@@ -13,5 +15,23 @@ namespace VirtuaWinAdvisor
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+
+            ServiceHost host = new ServiceHost(typeof(VirtuaWinService));
+            host.Open();
+            Debug.WriteLine($"Service host state: {host.State}");
+        }
+
+        private void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            File.WriteAllText(
+                Path.Combine(
+                    Environment.CurrentDirectory, typeof(App).Assembly.GetName().Name + ".txt"), 
+                e.ExceptionObject.ToString());
+
+            Environment.Exit(1);
+        }
     }
 }

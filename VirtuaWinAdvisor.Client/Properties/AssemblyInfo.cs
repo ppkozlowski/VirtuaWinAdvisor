@@ -7,12 +7,12 @@ using System.Windows;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("VirtuaWinAdvisor")]
-[assembly: AssemblyDescription("Advisor allow remote control VirtuaWin instance")]
+[assembly: AssemblyTitle("VirtuaWinAdvisor.Client")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("kozlowski.tech")]
-[assembly: AssemblyProduct("VirtuaWinAdvisor")]
-[assembly: AssemblyCopyright("kozlowski.tech 2017")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("VirtuaWinAdvisor.Client")]
+[assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

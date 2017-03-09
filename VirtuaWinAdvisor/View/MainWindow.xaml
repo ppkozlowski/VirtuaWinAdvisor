@@ -4,9 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VirtuaWinAdvisor"
+        xmlns:tb="http://www.hardcodet.net/taskbar"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Icon="/VirtuaWinAdvisor;component/Resources/icon.ico"
+        Title="VirtuaWin Advisor" Height="150" Width="300">
     <Grid>
-        
+        <tb:TaskbarIcon ToolTipText="Hello World VirtualWin" 
+                        IconSource="pack://application:,,,/Resources/icon.ico"/>
     </Grid>
 </Window>
